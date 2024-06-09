@@ -1,9 +1,18 @@
+'''
+####################################################################################
+TODO:
+# 1. Add error handling for invalid inputs
+# 2. Add ability to add new lists
+# 3. Save lists to file
+# 4. Change console text color for improved user experience
+####################################################################################
+'''
+
 # Import modules
 import os
 
 # Global variables
 tasks = []
-
 
 ####################################################################################
 # Helper Functions                                                                 #
@@ -17,14 +26,14 @@ def ClearConsole():
         os.system('clear')
 
 def PrintMenu():
-    print("\n===== TO DO LIST =====")
+    print("\n===== MENU =====")
     print("1. Add Tasks")
     print("2. Show Tasks")
     print("3. Complete Tasks")
     print("4. Exit Program")
 
 def PrintList():
-    print("\nCURRENT LIST:")
+    print("\n===== CURRENT LIST =====")
     for index, task in enumerate(tasks):
         status = "Done" if task["completed"] else "Not Done"
         print(f"{index + 1}. {task['task']} - {status}")
@@ -48,7 +57,7 @@ def main():
             for i in range(n_tasks):
                 task = input(f"Enter Task: ")
                 tasks.append({"task": task, "completed": False})
-                print(f"Added Task: {task}")
+                print(f"Task Added!")
                 # Testing Only
                 # print(tasks)                     
 
@@ -60,10 +69,9 @@ def main():
             ClearConsole()
             PrintList()
             task_index = int(input("Enter Task # to Mark as Completed: "))
-            if 0 <= task_index <len(tasks):
-                tasks[task_index]["completed"] = True
-                print(tasks[task_index]["task"]) 
-                #print(f"{tasks[task_index]["task"]} marked as completed!")
+            if 0 <= task_index < len(tasks) + 1:
+                tasks[task_index-1]["completed"] = True
+                print(f"{tasks[task_index-1]['task']} marked completed!")
             else:
                 print("Invalid task number. Try again.")
 
