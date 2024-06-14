@@ -23,6 +23,19 @@ export class AppComponent {
     {description: "laugh", done: false},
   ];
 
+  // Add items to the todo list
+  addItem(description: string) {
+    if (!description) return;
+
+    // Array method: unshift = add a new item to the beginning of the array and
+    //  top of the list
+    //  push() = add item to the end of the array and bottom of the list
+    this.allItems.unshift({
+      description,
+      done: false
+    })
+  };
+
   // Retrieves the items from the allItems array if the filter === all
   // Otherwise, returns the done or pending items depending on how user filters view
   // Establishes name of array as items
