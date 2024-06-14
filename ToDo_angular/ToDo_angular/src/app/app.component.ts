@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'
+import { Item } from "./item";
+import { ItemComponent } from "./item/item.component";
 
 @Component({
   standalone: true,
@@ -35,6 +37,13 @@ export class AppComponent {
       done: false
     })
   };
+
+ // Remove items from the todo list
+ /* splice() = changes contents of an array by removing or replacing existing
+               elements and/or adding new elements in place */
+  remove(item: Item){
+    this.allItems.splice(this.allItems.indexOf(item), 1);
+  }
 
   // Retrieves the items from the allItems array if the filter === all
   // Otherwise, returns the done or pending items depending on how user filters view
