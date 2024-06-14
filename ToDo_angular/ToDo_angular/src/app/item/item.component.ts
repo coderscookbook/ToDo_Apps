@@ -10,9 +10,30 @@ import { Item } from "../item";
   styleUrl: './item.component.css'
 })
 export class ItemComponent {
+  // When you use a property in the template, must declare in the class
   editable = false;
 
-  saveItem(value: string) {
+  // Communication between two components
+  /* @Input() = doorway for data to come into the component
+   * @Output()= doorway for data to go out of a component
+   *            - must be of type EventEmitter()
+   *            - so that a component can raise an event when there's data ready
+   *              to share with another component
+   * Note: the ! in the class's property declaration = definite assignment assertion
+   *            - tells TS the item field is always initialized and not undefined even
+   *              if TS cannot tell from the constructors definition
+   *            - if not included and have strict TS compilation settings, app will
+   *              fail to compile
+  */
+  @Input() item!: Item;
+  @Output() remove = new EventEmitter<Item>();
 
+  saveItem(description: string) {
+    if (!description) return;
+
+    this.editable = false;
+    this.item.description = description;
   }
+
 }
+
