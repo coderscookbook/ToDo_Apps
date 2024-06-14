@@ -1,0 +1,56 @@
+.main {
+  max-width: 500px;
+  width: 85%;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+  box-shadow:
+    0 2px 4px 0 rgb(0 0 0 / 20%),
+    0 2.5rem 5rem 0 rgb(0 0 0 /10%);
+}
+
+/* Media Query: conditional styles based on characteristics of the user's device
+    - @media = media query directive
+    - screen = type of media to which styles should apply (devices w/screens)
+    - and () = media feature that sets the condition for the query
+    - Explanation: media query checks if viewport is >=600px or wider, set width
+                    of elements with class 'main' to 70% of containing element
+*/
+
+@media screen and (min-width: 600px) {
+  .main {
+    width: 70%;
+  }
+}
+
+label {
+  font-size: 1.5rem;
+  display: block;
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+.lg-text-input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #000;
+  display: block;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.btn-wrapper {
+  flex-basis: 32%;
+}
+
+.active {
+  color:green;
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
+ul li {
+  list-style: none;
+}
