@@ -14,15 +14,15 @@ import { ItemComponent } from "./item/item.component";
 export class AppComponent {
   componentTitle = 'My To Do List';
 
-  // Filter property is of type UNION " x | y | z"
+  // Filter property is of type UNION " x | y | z", default "all"
   filter: "all" | "active" | "done" = "all";
 
   // Sample items
   allItems = [
-    {description: "eat", done: true},
-    {description: "sleep", done: false},
-    {description: "play", done: false},
-    {description: "laugh", done: false},
+    {description: "Workout", done: false},
+    {description: "Read", done: false},
+    {description: "Meditate", done: false},
+    {description: "Take Medicine", done: false},
   ];
 
   // Add items to the todo list
