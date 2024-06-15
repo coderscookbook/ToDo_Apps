@@ -19,9 +19,9 @@ export class AppComponent {
 
   // Sample items
   allItems = [
-    //{description: "eat", done: true},
-    //{description: "sleep", done: false},
-    //{description: "play", done: false},
+    {description: "eat", done: true},
+    {description: "sleep", done: false},
+    {description: "play", done: false},
     {description: "laugh", done: false},
   ];
 
