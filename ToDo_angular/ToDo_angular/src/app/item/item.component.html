@@ -19,7 +19,6 @@
       class="sm-text-input"
       placeholder="edit item"
       [value]="item.description"
-      <!-- Current value of input box becomes current value of item.description-->
       #editedItem
       (keyup.enter)="saveItem(editedItem.value)" />
     <!-- Cancel and Save buttons -->

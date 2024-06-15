@@ -9,7 +9,7 @@ import { ItemComponent } from "./item/item.component";
   templateUrl: './app.component.html',
   styleUrl: './app.component.css', // styleUrls: ['./pathtostyles.css']
 //  styles: ['h1 { color: red; }'] EXAMPLE
-  imports: [CommonModule],
+  imports: [CommonModule, ItemComponent],
 })
 export class AppComponent {
   componentTitle = 'My To Do List';

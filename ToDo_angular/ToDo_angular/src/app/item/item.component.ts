@@ -15,8 +15,11 @@ export class ItemComponent {
 
   // Communication between two components
   /* @Input() = doorway for data to come into the component
+   *            - use to specify that the value can come from outside the component
    * @Output()= doorway for data to go out of a component
    *            - must be of type EventEmitter()
+   *            - to specify that the value of a prop can leave the component and
+   *              another component can receive it
    *            - so that a component can raise an event when there's data ready
    *              to share with another component
    * Note: the ! in the class's property declaration = definite assignment assertion
@@ -34,6 +37,5 @@ export class ItemComponent {
     this.editable = false;
     this.item.description = description;
   }
-
 }
 
